@@ -1,0 +1,242 @@
+/* 
+    Created on : 24/09/2017, 05:12:17 PM
+    Author     : esteban
+
+*/
+
+/*
+Labels Styling
+*/
+.lb_normal{
+    -fx-font-size: 17px;
+}
+
+.lb_titulo{
+    -fx-font-size:30px;
+    -fx-font-color:red;
+}
+
+
+/*
+TextField Styling
+*/
+.tf_normal{
+    -fx-font-size: 17px;
+}
+
+
+/*
+para u campo de texto que sea no editable y cuyo unico  proposito
+es permitir  su copiado facilmente.
+*/
+.tf_4copy{
+    -fx-background-color: aliceblue;
+    -fx-font-size: 17px;
+    -fx-background-radius: 0 7 7 7, 0 5 5 5, 0 4 4 4;
+}
+
+
+/*
+TextArea Styling
+*/
+.ta_normal{
+    -fx-font-size: 17px;
+    -fx-border-width: 2;
+    -fx-border-style: dashed;
+    -fx-inner-background-color:#ffffcc;
+}
+
+
+/*
+Titled Pane Styling.
+used for the accordeon section selector.
+*/
+.tl_pane_normal{
+    -fx-font-size: 17px;
+}
+
+
+
+
+
+/*
+Tab Styling.
+for Tabbed Pane tabs.
+*/
+.tab_normal{
+    -fx-font-size: 17px;
+}
+
+
+
+
+/*
+TableColummn Styling.
+recall that table columns belongs to tableview and is a separate entity.
+*/
+.tbcol_normal{
+    -fx-font-size: 17px;
+}
+
+
+
+/*
+TableView Styling
+*/
+.tb_normal{
+    
+}
+
+
+/*
+Combo Box Styling
+Normal
+*/
+.cb_box_normal{
+    -fx-font-size: 17px;
+}
+
+
+
+
+/*
+CheckBox Styling
+normal
+*/
+
+.chbox_normal{
+    -fx-font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+/*
+Button Styling.
+Normal button
+*/
+.botonN{
+    -fx-background-color: #0099ff;
+    -fx-font-size: 17px;
+}
+
+.botonN:hover{
+    -fx-background-color: #00ccff;
+    -fx-font-size: 17px;
+}
+
+
+.botonN:pressed{
+    -fx-background-color: #0099cc;
+    -fx-font-size: 17px;
+}
+
+
+
+
+
+
+
+/* Button Styling
+Danger Button
+look and feel : caution
+*/
+.botonD{
+    -fx-background-color: #ffbe21;
+    -fx-font-size: 17px;
+}
+
+.botonD:hover{
+    -fx-background-color: #ffeb39;
+    -fx-font-size: 17px;
+}
+
+
+.botonD:pressed{
+    -fx-background-color: #ffb04d;
+    -fx-font-size: 17px;
+}
+
+
+
+
+/* Button Styling
+Super Danger Button
+look and feel : EXTRA-caution
+*/
+.botonDE{
+    -fx-background-color: #ff6600;
+    -fx-font-size: 17px;
+    -fx-border-width: 2 ; 
+    -fx-border-color: #ff3333;
+    -fx-border-style: dashed;
+}
+
+.botonDE:hover{
+    -fx-background-color: #ff9933;
+    -fx-font-size: 17px;
+    -fx-border-width: 2 ; 
+    -fx-border-color: #ffff00;
+    -fx-border-style: dashed;
+}
+
+
+.botonDE:pressed{
+    -fx-background-color: #ff3300;
+    -fx-font-size: 17px;
+    -fx-border-width: 2 ;
+    -fx-border-color: #ffff66;
+    -fx-border-style: dashed;
+}
+
+
+.context-menu {
+    -fx-background-color: azure;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 7 7 7, 0 7 7 7, 0 7 7 7;
+/*  -fx-padding: 0.666667em 0.083333em 0.666667em 0.083333em;  8 1 8 1 */
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+
+.menu-item {
+    -fx-font-size: 20px; 
+}
+
+
+
+
+/* Estilizado del toggle button para hacer lock de la modificacion de productos usando la clave dinamica.*/
+.lock_toggle_button{
+    -fx-font-size: 20px;
+    -fx-background-color: #ff3333;
+}
+
+
+.lock_toggle_button:hover{
+    -fx-font-size: 20px;
+    -fx-background-color: #ffbe21;
+}
+
+
+.lock_toggle_button:hover:pressed{
+    -fx-font-size: 20px;
+    -fx-background-color: #ffffcc;
+}
+
+
+.lock_toggle_button:pressed{
+    -fx-font-size: 20px;
+    -fx-background-color: #ffeb39;
+}
+
+
+.lock_toggle_button:selected{
+    -fx-font-size: 20px;
+    -fx-background-color: #0099cc;
+}
+

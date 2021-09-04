@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" onKeyReleased="#onKeyRes_Anchor" prefHeight="500.0" prefWidth="1100.0" stylesheets="@../MainCSS.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="tentactildesktoppos.FXMLPopUps.FXMLSeeConsolidadoController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Label styleClass="lb_titulo" text="Consolidado Del Facturas del cliente" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </top>
+         <center>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label styleClass="lb_normal" text="Consolidado">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="TA_Consolidado" prefWidth="200.0" styleClass="ta_normal" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label styleClass="lb_normal" text="Informacion Cliente">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="TA_Cli_info" prefWidth="250.0" styleClass="ta_normal" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </right>
+         <bottom>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickOK" prefHeight="50.0" prefWidth="120.0" styleClass="botonN" text="OK" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

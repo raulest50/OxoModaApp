@@ -1,0 +1,85 @@
+
+#agregando la funcionalidad de mostrar la cartera, dinero en mercancia e
+# ingreso por pagos.
+
+1.se crea nueva rama para los cambios hechos en mi portatil HP pavilion.
+2.nuevo FXMLStats
+3.nuevo Controlador para FXMLStats.
+4. se agrega a FXMLMain el Tab de Stats.
+5. hg add auxiliar.txt (el presente archivo).
+// ya que ocurrio un problema de manejo de repositorio mercurial en
+// la maquina de despliegue y desarrollo de la aplicacion entonces
+// se toma la medida de crear este archivo y hacer los cambios en una
+// nueva rama para facilitar la posterior solucion del problema.
+7. en el FXMLMain se agrego dentro del tag de anchor pane, correspondiente
+al tag de stats, el tag children y un include para el fxml de stats.
+8. se aagregaron los elemtos ui para la seccion de stats.
+9. se agrego a SQLFactura 2 atributo's finales. COL_SUMA y SELECT_CARTERA
+10. se agrega en Hndl_Factura metodo que hace uso del select cartera
+y retorna el valor en cartera como un int.
+11. se agrega un listener de tab change para el tab de stats.
+12. se agrego el controlador de el tab de stats como un atributo
+del controlador del FXML pricipal.
+13. se agrego a SQL_Facturas como atributo SELECT_PAGOS_IN_DT,
+los pagos hechos en un intervalo de tiempo Dt.
+14.se agrega en Hndl_Factura metodo para hacer calculo del ingreso
+de efectivo en un intervalo de tiempo determinado.
+15. se hace comit con las 3 funcionalidades propuestas agregadas,
+mostrar stock a dinero, ingreso de efectivo en fecha seleccionada
+y cartera.
+
+# agregando tableColum para mostrar  la fecha de un factura record.
+16. se agrego atributo SimpleStringProperty fecha para poder mostrar en la
+seccion de abonos y devoluciones la  fecha de un abono o una devolucion.
+17. se agrego tambien en la misma clase su respectivo getter
+18. se agrego una linea en el constructor para el caso de abono y constructor 
+para devolucion que asigna la fecha correspondiente del record. esta variable
+al iniciarse en "" no es necesario establecerse para los otros constructores.
+19.se agrego en el fxml del tab de abonos y devoluciones el tableColumn de
+fecha pero solo al Table view de facturas.
+20. en el controlador de abonos y devoluciones se agrego el respectivo
+atributo  table column de la fecha
+21.en el metodo ConfigureAllTableViews() del controlador de abonos y 
+devoluciones se agrego la correspondiente linea para hacer setCellValueFactory.
+
+# modificaciones para agregar funcionalidad de lock dynamic  password
+// consiste en generar una clave dinamica  que se envia al correo cada que 
+// el usuario va a realizar operaciones muy sensibles para la integridad de
+// la informacion que guarda el sistema.
+
+22. se agrego un nuevo archivo fxml PopUpmailConfig y su respectivo
+controlador para configurar el email que envia y que recive la clave dinamica.
+23. se agrego en la tabla de configuracion 4 propiedades.
+    sender_mail = ""
+    sender_pass = ""
+    destination_mail = ""
+    dyn_pass = ""
+    INSERT INTO `negocio_r`.`configuracion` (`idconf`, `valor`) VALUES ('sender_mail', '');
+    INSERT INTO `negocio_r`.`configuracion` (`idconf`, `valor`) VALUES ('sender_pass', '');
+    INSERT INTO `negocio_r`.`configuracion` (`idconf`, `valor`) VALUES ('destination_mail', '');
+    INSERT INTO `negocio_r`.`configuracion` (`idconf`, `valor`) VALUES ('dyn_pass', '');
+24. se agregan estos 4 atributos en SQL_Configuracion
+25.se agregan los elementos propios de la UI para configurar los datos para Email
+26. se agrega en el tab de configuracion el tf no editable del email destino
+y el boton para configurarlo
+27. se agrega en el handler de configuracion un metodo que genera la clave dinamica
+y la guarda en la tabla de configuracion.
+28. se agrega en la super clase de los controladores los metodos para hacer
+un dynPass check.
+29. se agrega al handler de configuracion el metodo que permite enviar un email.
+y otro metodo que envia tambien un email pero que toma los datos de origen
+y destino de la tabla de configuracion.
+30. se agregaron los archivos jar de JAF y javax.mail que son necesarios
+para enviar el correo, tambien se  hizo el respectivo add.
+31. se agrego en el FXML del tab de configuracion 2 labels y un boton, que
+se relacionan con la funcionalidad de configurar los correos para
+la recepcion de la clave aleatoria.
+32.se agrega en el controlador del tab de configuracion un el listener del
+boton de configurar emails y ademas la respectiva logica, PopUpConfEmails(). (2 metodos nuevos  adicionales)
+33. se agrego el toggle button y el label de correo configurado actualmente
+al controlador  del tab de configuracion.
+34.se creo un metodo adicional en el cual se pone unicamente la logica para
+abrir una nueva ventana. es decir que con este se han agregado 3 metodos
+nuevos al controlador de configuracion.
+35.
+

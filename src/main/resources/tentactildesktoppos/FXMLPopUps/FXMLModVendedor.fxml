@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLPopUps.FXMLModVendedorController">
+    <stylesheets>
+        <URL value="@/tentactildesktoppos/MainCSS.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@../MainCSS.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Cedula">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_cedula_vemod" onAction="#onAction_tf_cedula_vemod" styleClass="tf_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS" />
+                        <AnchorPane HBox.hgrow="ALWAYS" />
+                        <AnchorPane layoutX="431.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                        <AnchorPane layoutX="384.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="Nombre Completo">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_fname_vemod" onAction="#onAction_tf_fname_vemod" styleClass="tf_normal" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="Telefono 1">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_tel1_vemod" onAction="#onAction_tf_tel1_vemod" styleClass="tf_normal" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="Telefono 2">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_tel2_vemod" onAction="#onAction_tf_tel2_vemod" styleClass="tf_normal" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="Direccion">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_direccion_vemod" onAction="#onAction_tf_direccion_vemod" styleClass="tf_normal" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="E-mail">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_email_vemod" onAction="#onAction_tf_email_vemod" styleClass="tf_normal" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="Fecha de Nacimiento">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="dt_cumple_vemod" styleClass="cb_box_normal" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <CheckBox fx:id="chb_estado_vemod" mnemonicParsing="false" styleClass="chbox_normal" text="Estado (Activo/Inactivo)" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin></HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="20.0" right="15.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <top>
+            <Label styleClass="lb_titulo" stylesheets="@../MainCSS.css" text="Modificar Vendedor" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Descripcion" />
+                  <TextArea fx:id="ta_descripcion_vemod" prefHeight="200.0" prefWidth="200.0" styleClass="ta_normal" stylesheets="@../MainCSS.css">
+                     <VBox.margin>
+                        <Insets bottom="20.0" right="15.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Datos Actuales" />
+                  <TextArea fx:id="ta_act_datos_vemod" prefHeight="200.0" prefWidth="200.0" styleClass="ta_normal" stylesheets="@../MainCSS.css">
+                     <VBox.margin>
+                        <Insets right="15.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
+         </right>
+         <bottom>
+            <HBox alignment="TOP_CENTER" stylesheets="@../MainCSS.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClick_b_cancel_vemod" styleClass="botonN" text="Cancelar">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClick_b_reset_vemod" styleClass="botonN" text="Reset">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClick_b_Modifcar_vemod" styleClass="botonD" text="Hacer Modificacion">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClick_b_eliminar_vemod" styleClass="botonDE" text="Eliminar">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

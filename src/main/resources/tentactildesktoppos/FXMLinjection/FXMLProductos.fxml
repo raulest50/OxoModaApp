@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1300.0" stylesheets="@../MainCSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLinjection.FXMLProductosController">
+   <children>
+      <Accordion fx:id="AcordeonProductos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane animated="false" styleClass="tl_pane_normal" text="Codificar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <bottom>
+                              <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <CheckBox fx:id="CHB_imprimirstk" mnemonicParsing="false" styleClass="chbox_normal" text="Imprimir  Stickers">
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                    <Button fx:id="B_codificar" mnemonicParsing="false" onAction="#onAction_B_codificar" onMouseClicked="#onCLick_B_codificar" prefWidth="190.0" styleClass="botonN" text="Codificar">
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="40.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="B_borrar" mnemonicParsing="false" onAction="#onAction_B_borrar" onMouseClicked="#onCLick_B_borrar" prefWidth="170.0" styleClass="botonN" text="Borrar">
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </bottom>
+                           <center>
+                              <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="lb_normal" text="Codigo">
+                                             <HBox.margin>
+                                                <Insets right="30.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_codigo" onAction="#onAction_TF_codigo" prefHeight="38.0" prefWidth="293.0" styleClass="tf_normal" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Ultimo Codigo Usado:">
+                                             <HBox.margin>
+                                                <Insets right="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_Last_Cod" editable="false" styleClass="tf_4copy" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="lb_normal" text="Descripcion">
+                                             <HBox.margin>
+                                                <Insets right="30.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_descripcion" onAction="#onAction_TF_descripcion" prefHeight="38.0" prefWidth="519.0" styleClass="tf_normal" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="48.0">
+                                       <children>
+                                          <Label styleClass="lb_normal" text="Costo">
+                                             <HBox.margin>
+                                                <Insets right="20.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_costo" onAction="#onAction_TF_costo" onKeyPressed="#onKey_TF_costo" onKeyReleased="#onKeyRel_TF_costo" prefHeight="38.0" prefWidth="173.0" styleClass="tf_normal">
+                                             <HBox.margin>
+                                                <Insets right="40.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label prefHeight="26.0" prefWidth="32.0" styleClass="lb_normal" text="Iva">
+                                             <HBox.margin>
+                                                <Insets right="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_iva" onAction="#onAction_TF_iva" prefHeight="38.0" prefWidth="77.0">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label text="\%">
+                                             <HBox.margin>
+                                                <Insets right="40.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label prefHeight="26.0" prefWidth="52.0" styleClass="lb_normal" text="Stock">
+                                             <HBox.margin>
+                                                <Insets top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_stock" onAction="#onAction_TF_stock" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="48.0">
+                                       <children>
+                                          <Label styleClass="lb_normal" text="PV. PorMayor">
+                                             <HBox.margin>
+                                                <Insets right="20.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_pvmayor" onAction="#onAction_TF_mayor" onKeyPressed="#onKey_TF_pvmayor" onKeyReleased="#onKeyRel_TF_pvmayor" prefHeight="38.0" prefWidth="203.0" styleClass="tf_normal" />
+                                          <Label fx:id="LB_mayor_frac" text="__%">
+                                             <HBox.margin>
+                                                <Insets left="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="48.0">
+                                       <children>
+                                          <Label styleClass="lb_normal" text="PV. Contado">
+                                             <HBox.margin>
+                                                <Insets right="20.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_pvcontado" onAction="#onAction_TF_pvcontado" onKeyPressed="#onKey_TF_pvcontado" onKeyReleased="#onKeyRel_TF_pvcontado" prefHeight="38.0" prefWidth="188.0" styleClass="tf_normal" />
+                                          <Label fx:id="LB_contado_frac" text="__%">
+                                             <HBox.margin>
+                                                <Insets left="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="48.0">
+                                       <children>
+                                          <Label styleClass="lb_normal" text="PV. Credito">
+                                             <HBox.margin>
+                                                <Insets right="20.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_pvcredito" onAction="#onAction_TF_credito" onKeyPressed="#onKey_TF_pvcredito" onKeyReleased="#onKeyRel_TF_pvcredito" prefHeight="38.0" prefWidth="196.0" styleClass="tf_normal" />
+                                          <Label fx:id="LB_credito_frac" text="__%">
+                                             <HBox.margin>
+                                                <Insets left="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <right>
+                              <VBox BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="TOP_CENTER">
+                                       <children>
+                                          <Label text="Productos Codificados en los ultimos 7 dias" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <BarChart fx:id="BChart_Productos">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Records BD Productos:  " />
+                                          <Label fx:id="LB_num_prod_BD" text="-_-_-_" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="TlPane_Buscar" animated="false" styleClass="tl_pane_normal" text="Buscar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <VBox BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Buscar">
+                                             <HBox.margin>
+                                                <Insets right="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_buscar" onAction="#onAction_TF_buscar" prefHeight="38.0" prefWidth="266.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <ComboBox fx:id="CB_tipoBusqueda" onKeyPressed="#onKeyPressCBoxSearchPro" prefHeight="38.0" prefWidth="268.0">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <CheckBox fx:id="CHBox_SearchN_Clear" mnemonicParsing="false" text="Search &amp; Clear">
+                                             <HBox.margin>
+                                                <Insets left="30.0" top="5.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#onAction_B_buscar" onMouseClicked="#onClick_B_buscar" prefWidth="140.0" styleClass="botonN" text="Buscar">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#onAction_B_borrar_mod" onMouseClicked="#onClick_B_borrar_mod" prefWidth="140.0" styleClass="botonN" text="Borrar">
+                                             <HBox.margin>
+                                                <Insets left="30.0" right="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_Modificar" prefWidth="140.0" styleClass="botonD" text="Modificar">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <TableView fx:id="TV_productos" prefHeight="311.0" prefWidth="1251.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="TC_codigo" prefWidth="147.9999634027481" styleClass="tbcol_normal" text="Codigo" />
+                                              <TableColumn fx:id="TC_descripcion" prefWidth="429.00001525878906" styleClass="tbcol_normal" text="Descripcion" />
+                                                <TableColumn fx:id="TC_costo" prefWidth="109.0" styleClass="tbcol_normal" text="Costo" />
+                                                <TableColumn fx:id="TC_mayor" prefWidth="108.0001220703125" styleClass="tbcol_normal" text="PV mayor" />
+                                                <TableColumn fx:id="TC_contado" prefWidth="114.00006103515625" styleClass="tbcol_normal" text="PV con." />
+                                                <TableColumn fx:id="TC_credito" prefWidth="113.00006103515625" styleClass="tbcol_normal" text="PV cred." />
+                                                <TableColumn fx:id="TC_fecha" prefWidth="160.0" styleClass="tbcol_normal" text="Last Upd." />
+                                                <TableColumn fx:id="TC_stock" maxWidth="84.9998779296875" minWidth="60.0" prefWidth="84.9998779296875" text="Stock" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>

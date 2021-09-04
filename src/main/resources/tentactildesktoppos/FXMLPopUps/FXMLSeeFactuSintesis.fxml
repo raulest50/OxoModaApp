@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="tentactildesktoppos.FXMLPopUps.FXMLSeeFactuSintesisController">
+    <stylesheets>
+        <URL value="@/tentactildesktoppos/MainCSS.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="106.0" layoutY="64.0" onKeyReleased="#OnKeyRes" prefHeight="200.0" prefWidth="200.0" stylesheets="@../MainCSS.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="TOP" styleClass="lb_normal" text="Records de la Factura" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="TA_Factu_Records" styleClass="ta_normal" VBox.vgrow="ALWAYS" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <top>
+            <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Label styleClass="lb_titulo" text="Factura: ">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="LB_docID" alignment="CENTER" contentDisplay="CENTER" styleClass="lb_titulo" text="---" HBox.hgrow="ALWAYS" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="40.0" left="5.0" right="5.0" top="15.0" />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <right>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" right="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label styleClass="lb_normal" text="Informacion del Cliente">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="TA_CLient_info" prefWidth="280.0" styleClass="ta_normal" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </right>
+         <bottom>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onClickOk" prefHeight="50.0" prefWidth="120.0" styleClass="botonN" text="OK" VBox.vgrow="ALWAYS" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+﻿
+*
+imprimir sintesis de la factura en lugar de la historia completa
+
+
+
+hacer manual de procesos.
+
+	para uso
+
+	re-instalacion
+
+	reestablecimiento de BD
+
+	correccion de errores
+
+
+*revisar lo de abeas data porque se esta pidiendo informacion
+de los clientes.
+
+
+
+
+*ANALITICA DE LAS TABLAS.
+	(hacer pestaña nueva)
+	entrada de efectivo,
+	 salida de prendas,
+	 mercancia en stock,
+	 en credito.
+
+
+
+*WARNING POR STOCK MENOR A 0 Y POR PRENDAS CON MUCHO TIEMPO SIN VENDER.
+
+
+
+*ANALIZAR FORMAS DE AHORRAR PAPEL
+
+
+*WARNING DE FACTURAS VIEJAS Y STOCK RARO.
+
+
+
+*imprimir listado clientes para hacer cobros.
+
+
+
+
+*escribir MANUAL acciones de contingencia en caso de fallas.
+
+
+
+*escribir manual de instalacion.
+
+
+
+*forma de configurar un password.
+
+
+
+*hacer lock con password de las acciones mas sensibles del sistema como cambiar ciertos valores de la coniguracion y la modificacion de productos.
+
+
+
+
+agregar un filtro para la busqueda de clientes.
+
+
+
+
+
+
+
+
+

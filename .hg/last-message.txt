@@ -1,0 +1,3 @@
+se cambio el metodo de autenticacion para desbloquear cambios sensibles en el programa.
+primero se actualizo en BDHandler para usar mysql 8.
+ademas la clave dinamica en lugar de enviarse al correo para desbloquear el programa, se hace un udp broadcast con la clave y ya es con una app android que se hace el desbloqueo

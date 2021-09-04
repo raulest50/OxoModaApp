@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=TentactilPOS
+Comment= Take Full Control of your Retails Store...
+Exec=gksu /bin/sh "/home/TentactilPOS/run.sh"
+Icon=/home/TentactilPOS/icon.png
+Categories=Application;Sales;Java;DataBase;Monitor
+Version=1.0
+Type=Application
+Terminal=0
+Path=/home/TentactilPOS

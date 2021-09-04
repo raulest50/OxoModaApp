@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1330.0" stylesheets="@../MainCSS.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLinjection.FXMLVentasController">
+    
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="TOP_CENTER">
+                     <children>
+                        <Label styleClass="lb_normal" text="Producto">
+                           <HBox.margin>
+                              <Insets left="5.0" right="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="TF_buscarProducto" onAction="#onAction_TF_buscarProducto" prefWidth="400.0" styleClass="tf_normal" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <AnchorPane VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="TV_ventas" onKeyPressed="#onKeyPress_TV_ventas" prefWidth="975.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="TC_codigo" prefWidth="178.00003051757812" styleClass="tbcol_normal" text="Codigo" />
+                            <TableColumn fx:id="TC_descripcion" prefWidth="394.0" styleClass="tbcol_normal" text="Descripcion" />
+                              <TableColumn fx:id="TC_precio_venta" prefWidth="74.0" styleClass="tbcol_normal" text="PV" />
+                              <TableColumn fx:id="TC_cantidad" prefWidth="194.0" styleClass="tbcol_normal" text="Cantidad" />
+                              <TableColumn fx:id="TC_subTotal" prefWidth="133.0" styleClass="tbcol_normal" text="Subtotal" />
+                          </columns>
+                        </TableView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <right>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" text="vendedor">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <AnchorPane HBox.hgrow="ALWAYS">
+                           <children>
+                              <ComboBox fx:id="CB_vendedor" prefWidth="200.0" styleClass="cb_box_normal" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="cliente">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="TF_buscar_cliente" onAction="#onAction_TF_buscar_cliente" onKeyReleased="#onKeyRel_TF_buscar_cliente" styleClass="tf_normal" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <AnchorPane>
+                     <children>
+                        <TextArea fx:id="TA_infoCliente" editable="false" prefHeight="235.0" prefWidth="190.0" styleClass="ta_normal" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label styleClass="lb_normal" text="Pago">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <AnchorPane HBox.hgrow="ALWAYS">
+                           <children>
+                              <ComboBox fx:id="CB_tipoPago" styleClass="cb_box_normal" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Label id="normaaltext" styleClass="lb_normal" text="Total:">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <AnchorPane HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="normaltext" fx:id="L_total" styleClass="lb_normal" text="-----" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" text="Prendas: ">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin></Label>
+                        <Label fx:id="Lb_NPrendas" styleClass="lb_normal" text="------" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#onClick_B_bono" styleClass="botonN" text="Redimir Cupon" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onAction_B_registrar" onMouseClicked="#onClick_B_registrar" prefWidth="100.0" styleClass="botonD" text="Registrar">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onAction_B_cancelar" onMouseClicked="#onClick_B_cancelar" prefWidth="150.0" styleClass="botonN" text="Cancelar">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+    
+    
+    
+</AnchorPane>

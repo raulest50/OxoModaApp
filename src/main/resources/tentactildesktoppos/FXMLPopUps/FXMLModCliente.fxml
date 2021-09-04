@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLPopUps.FXMLModClienteController">
+    <stylesheets>
+        <URL value="@/tentactildesktoppos/MainCSS.css" />
+    </stylesheets>
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="lb_titulo" stylesheets="@../MainCSS.css" text="Modificar Cliente" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="CC o Nit">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_ccnit_modcli" onAction="#onAction_tf_ccnit_modcli" style="-fx-width: 100%;" styleClass="tf_normal" stylesheets="@../MainCSS.css">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Nombre Completo">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_fname_modcli" onAction="#onAction_tf_fname_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Telefono1">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_tel1_modcli" onAction="#onAction_tf_tel1_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Telefono 2">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_tel2_modcli" onAction="#onAction_tf_tel2_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Telefono 3">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_tel3_modcli" onAction="#onAction_tf_tel3_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Email">
+                           <HBox.margin>
+                              <Insets left="20.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_email_modcli" onAction="#onAction_tf_email_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Tipo Cliente">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cb_tipocli_modcli" onAction="#onAction_cb_tipocli_modcli" promptText="CREDITO" styleClass="cb_box_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" right="30.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Forma pago">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cb_tipo_cobro_modcli" onAction="#onAction_cb_tipo_cobro_modcli" promptText="SE MANDA A COBRAR" styleClass="cb_box_normal" stylesheets="@../MainCSS.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Fecha De Cumpleaños">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="dt_cumple_modcli" onAction="#onAction_dt_cumple_modcli" styleClass="lb_normal" stylesheets="@../MainCSS.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <right>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Datos Actuales Del Cliente" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="ta_datos_actuales_modcli" editable="false" prefHeight="200.0" prefWidth="300.0" styleClass="ta_normal" stylesheets="@../MainCSS.css" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </right>
+         <bottom>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Direccion">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_direccion_modcli" onAction="#onAction_tf_direccion_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css">
+                           <HBox.margin>
+                              <Insets left="10.0" right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label styleClass="lb_normal" stylesheets="@../MainCSS.css" text="Ubicacion">
+                           <HBox.margin>
+                              <Insets right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tf_ubicacion_modcli" onAction="#onAction_tf_ubicacion_modcli" styleClass="tf_normal" stylesheets="@../MainCSS.css">
+                           <HBox.margin>
+                              <Insets left="10.0" right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="b_cancelar" mnemonicParsing="false" onMouseClicked="#onClick_b_cancelar" prefWidth="100.0" styleClass="botonN" stylesheets="@../MainCSS.css" text="Cancelar">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="b_reset" mnemonicParsing="false" onMouseClicked="#onClick_b_reset" prefWidth="100.0" styleClass="botonN" stylesheets="@../MainCSS.css" text="Reset">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="b_HacerModificacion" mnemonicParsing="false" onMouseClicked="#onClick_b_HacerModificacion" styleClass="botonD" stylesheets="@../MainCSS.css" text="Hacer Modificacion">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="b_Eliminar" mnemonicParsing="false" onMouseClicked="#onClick_b_Eliminar" styleClass="botonDE" stylesheets="@../MainCSS.css" text="Eliminar">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

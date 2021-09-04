@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1296.0" styleClass="mainFxmlClass" stylesheets="@../MainCSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLinjection.FXMLAbon_DevController">
+   <children>
+      <Accordion fx:id="AccordionAbonDev" layoutX="37.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane fx:id="TLPane_AbonDev" animated="false" onMouseClicked="#onClickTLPane_AbonDev" styleClass="tl_pane_normal" text="Abonos y Devoluciones">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <VBox BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TableView fx:id="TV_factura" VBox.vgrow="ALWAYS">
+                                      <columns>
+                                        <TableColumn fx:id="TC_FAC_codigo" prefWidth="183.9999634027481" styleClass="tbcol_normal" text="Codigo" />
+                                        <TableColumn fx:id="TC_FAC_descripcion" prefWidth="348.0000305175781" styleClass="tbcol_normal" text="Descripcion" />
+                                          <TableColumn fx:id="TC_FAC_pventa" prefWidth="62.999969482421875" styleClass="tbcol_normal" text="PV" />
+                                          <TableColumn fx:id="TC_FAC_cantidad" prefWidth="34.0" styleClass="tbcol_normal" text="N" />
+                                          <TableColumn fx:id="TC_FAC_subtotal" prefWidth="88.0" styleClass="tbcol_normal" text="SubTotal" />
+                                          <TableColumn fx:id="TC_FAC_fecha" prefWidth="108.0" text="fecha" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                    <TableView fx:id="TV_operaciones" onKeyPressed="#onKeyPressTVOperaciones" VBox.vgrow="ALWAYS">
+                                      <columns>
+                                        <TableColumn fx:id="TC_OPE_codigo" prefWidth="125.99996340274811" styleClass="tbcol_normal" text="Codigo" />
+                                        <TableColumn fx:id="TC_OPE_descripcion" prefWidth="408.0000305175781" styleClass="tbcol_normal" text="Descripcion" />
+                                          <TableColumn fx:id="TC_OPE_pventa" prefWidth="60.999969482421875" styleClass="tbcol_normal" text="PV" />
+                                          <TableColumn fx:id="TC_OPE_cantidad" prefWidth="59.999969482421875" styleClass="tbcol_normal" text="N" />
+                                          <TableColumn fx:id="TC_OPE_subtotal" prefWidth="143.0" styleClass="tbcol_normal" text="SubTotal" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets right="40.0" />
+                                 </BorderPane.margin>
+                              </VBox>
+                           </center>
+                           <right>
+                              <VBox BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="lb_normal" text="id Factura">
+                                             <HBox.margin>
+                                                <Insets right="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_buscar_factura" onAction="#onAction_TF_buscar_factura" prefWidth="238.0" styleClass="tf_normal" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <TextArea fx:id="TA_info_factura" prefWidth="400.0" styleClass="ta_normal" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="110.0">
+                                       <children>
+                                          <Label styleClass="lb_normal" text="Devolucion">
+                                             <HBox.margin>
+                                                <Insets right="15.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="TF_devolucion" onAction="#onAction_TF_devolucion" prefHeight="38.0" prefWidth="266.0" styleClass="tf_normal" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_abonar" prefHeight="40.0" prefWidth="100.0" styleClass="botonD" text="Abonar">
+                                             <HBox.margin>
+                                                <Insets right="15.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_hacer_operacion" prefHeight="40.0" styleClass="botonD" text="Hacer Operacion" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_remover" prefHeight="40.0" styleClass="botonN" text="Remover Record">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <ToggleButton fx:id="TOGB_s" mnemonicParsing="false" onMouseClicked="#onClick_B_sintesis" prefHeight="40.0" prefWidth="50.0" text="S">
+                                             <HBox.margin>
+                                                <Insets right="30.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_Cancelar" prefHeight="40.0" text="Cancelar" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="110.0">
+                                       <children>
+                                          <CheckBox fx:id="CHB_Print_Comp" mnemonicParsing="false" text="Imprimir comprobante" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin></HBox>
+                                 </children>
+                              </VBox>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="TLPane_GenCob" animated="false" styleClass="tl_pane_normal" text="Gestion de Cobros">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="lb_normal" text="Buscar">
+                                       <HBox.margin>
+                                          <Insets right="20.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="TF_SEARCH_buscar_factura" onAction="#onAction_TF_SEARCH_buscar_factura" prefWidth="250.0" styleClass="tf_normal">
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="CB_tipo_busqueda" prefWidth="350.0" styleClass="tbcol_normal">
+                                       <HBox.margin>
+                                          <Insets right="50.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <Label styleClass="lb_normal" text="orden">
+                                       <HBox.margin>
+                                          <Insets right="20.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ComboBox fx:id="CB_orden" prefWidth="300.0" styleClass="cb_box_normal" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Button mnemonicParsing="false" onMouseClicked="#onClick_buscar_Gcobros" prefWidth="150.0" styleClass="botonN" text="Buscar">
+                                       <HBox.margin>
+                                          <Insets right="40.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onMouseClicked="#onClick_B_borrar_gencob" prefWidth="100.0" styleClass="botonN" text="Borrar">
+                                       <HBox.margin>
+                                          <Insets right="40.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" prefWidth="150.0" styleClass="botonN" text="Imprimir Copia">
+                                       <HBox.margin>
+                                          <Insets right="40.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <CheckBox fx:id="ChkBox_con_saldo" mnemonicParsing="false" styleClass="chbox_normal" text="Incluir Facturas Canceladas">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView fx:id="TV_busqueda" onMouseClicked="#onClick_TV_busqueda" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="TC_consec_facsearch" prefWidth="166.0" styleClass="tbcol_normal" text="Consecutivo" />
+                                  <TableColumn fx:id="TC_cli_id_facsearch" prefWidth="202.0" styleClass="tbcol_normal" text="Cliente ID" />
+                                    <TableColumn fx:id="TC_cli_name_facsearch" prefWidth="388.0" styleClass="tbcol_normal" text="Cliente Nombre" />
+                                    <TableColumn fx:id="TC_femision_facsearch" prefWidth="136.0" styleClass="tbcol_normal" text="Fecha E" />
+                                    <TableColumn fx:id="TC_ult_abono_facsearch" prefWidth="142.0" styleClass="tbcol_normal" text="Fecha A" />
+                                    <TableColumn fx:id="TC_saldo_facsearch" prefWidth="112.0" styleClass="tbcol_normal" text="saldo" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets top="40.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+    
+    
+</AnchorPane>
