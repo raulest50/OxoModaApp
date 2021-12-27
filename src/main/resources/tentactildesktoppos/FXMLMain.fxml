@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 
 <AnchorPane fx:id="AnchorPrincipal" prefHeight="670.0" prefWidth="1350.0" styleClass="bigPane" stylesheets="@MainCSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLDocumentController">
     <children>

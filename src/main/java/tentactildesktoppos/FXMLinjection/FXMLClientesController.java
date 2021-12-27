@@ -5,9 +5,11 @@ import BD_tdpos_r.Hndl_Clientes;
 import BD_tdpos_r.Hndl_Cupon;
 import BD_tdpos_r.Hndl_Factura;
 import Impresion.LocalPrinter;
+import Reportes.Clientes_Excel;
 import Validator_tdpos_r.Va_Cliente;
 import Validator_tdpos_r.ValidationResult;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -45,6 +47,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.print.PrintException;
+import javafx.stage.FileChooser;
 
 
 import support_tdpos.SuppMess;
@@ -297,6 +300,7 @@ public class FXMLClientesController extends ControllerFather{
      */
     public MySearchGlyph Anim_Glyph;
     
+    public Clientes_Excel clientReporter;
     
     /**
      * Initializes the controller class.
@@ -325,6 +329,7 @@ public class FXMLClientesController extends ControllerFather{
         
         this.Anim_Glyph = new MySearchGlyph(GLY_Search);
         
+        this.clientReporter = new Clientes_Excel();
     }
     
     
@@ -611,7 +616,7 @@ public class FXMLClientesController extends ControllerFather{
      */
     @FXML
     public void onAction_TF_buscar(ActionEvent es){
-        this.BuscarCliente();
+        //this.BuscarCliente();
     }
     
     
@@ -655,6 +660,7 @@ public class FXMLClientesController extends ControllerFather{
                     }
                     
                     SetTV_clientes(lc);
+                    
                     Anim_Glyph.Stop();
                     
                 } catch(ClassNotFoundException | SQLException ex){ // se notifica al usuario en caso de una ecepcion java.
@@ -672,6 +678,69 @@ public class FXMLClientesController extends ControllerFather{
         // se arranca el hilo.
         t.setDaemon(true);
         t.start();
+    }
+    
+    /**
+     * click en el boton de busqueda.
+     * pestaña busqueda y modificacion de clientes
+     * @param me 
+     */
+    @FXML
+    public void onClick_B_Reportar(MouseEvent me){
+        
+        FileChooser fc = new FileChooser();
+        FileChooser.ExtensionFilter ef = new FileChooser.ExtensionFilter("Excel files (*.xlsx)", "*.xlsx");
+        fc.getExtensionFilters().add(ef);
+        
+        //Show save file dialog
+        File file = fc.showSaveDialog(this.MainDocController.clientesTabController.GetStage());
+        
+        if(file != null){
+            this.Anim_Glyph.Play();// se inicia la animacion de busqueda
+            Thread t = new Thread(){
+                @Override
+                public void run(){
+                    try {
+
+                        clientReporter.generar(file);
+                    } catch (Exception ex) {
+                        ShowError(SuppMess.EXCEPTION, SuppMess.CALL_SUPPORT, SuppMess.INFORM_THIS + ex.getMessage());
+                    }
+
+                    Anim_Glyph.Stop();
+
+                }
+            };
+            // se arranca el hilo.
+            t.setDaemon(true);
+            t.start();
+        }
+    }
+    
+    
+    @FXML
+    public void onAction_TF_Reportar(ActionEvent ae){
+        /*
+        this.Anim_Glyph.Play();// se inicia la animacion de busqueda
+        try {          
+            clientReporter.generar();
+        } catch (Exception ex) {
+            ShowError(SuppMess.EXCEPTION, SuppMess.CALL_SUPPORT, SuppMess.INFORM_THIS + ex.getMessage());
+        }
+        
+        Anim_Glyph.Stop();
+        /*
+        Thread t = new Thread(){
+            @Override
+            public void run(){
+                
+                
+            }
+        };
+        // se arranca el hilo.
+        t.setDaemon(true);
+        t.start();
+        */
     }
     
     /**
@@ -711,8 +780,7 @@ public class FXMLClientesController extends ControllerFather{
         this.TF_buscar.clear();
         this.TF_buscar.requestFocus();
     }
-    
-    
+  
     /**
      * se activa
      * @param me 
@@ -794,7 +862,9 @@ public class FXMLClientesController extends ControllerFather{
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
+                clientReporter.setClientes(ovl_lc);
                 TV_clientes.setItems(ovl_lc);
+                clientReporter.crear();
             }
         });
     }
