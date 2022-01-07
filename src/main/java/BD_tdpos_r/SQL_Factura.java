@@ -84,6 +84,14 @@ public class SQL_Factura {
     
     
     /**
+     * query que suma el saldo de todas las facturas hechas entre las fechas
+     * ?:1 y ?:2, es decir, fecha inicial y fecha final.
+     */
+    public static final String SELECT_VENTAS_CONTADO_IN_DT = 
+            "select sum(valor) as suma from factura inner join abonos on factura_consecutivo = consecutivo"
+            + " where forma_pago = \"Contado\" and (factura.fecha>=? and factura.fecha<=?);";
+    
+    /**
      * query que calcula la sumatoria del producto del stock con el costo
      * para obtener el equivalente en dinero de la mercancia del negocio.
      */

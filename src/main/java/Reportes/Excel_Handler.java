@@ -38,7 +38,7 @@ public class Excel_Handler {
     public void AddCell(String cellValue){
         Cell c = row.createCell(cellCounter++);
         if (cellValue != null && !cellValue.isBlank()){
-            c.setCellValue(cellValue);
+            c.setCellValue(cellValue.toUpperCase());
         }
     }
     

@@ -365,5 +365,28 @@ public class Hndl_Factura extends BDHandler{
         super.CerrarTodo();
         return r;
     }
-    
+ 
+    /**
+     * entrega las ventas de contado hechas entre las fecha f1 y f2,
+     * se suman facturas pagadas de contado .
+     * @param f1
+     * @param f2
+     * @return
+     * @throws ClassNotFoundException
+     * @throws SQLException 
+     */
+    public int GetContadoInDt(LocalDate f1, LocalDate f2)
+        throws ClassNotFoundException, SQLException{
+        int r = 0;
+        super.SetConnection();
+        super.pst = (PreparedStatement) super.link.prepareStatement(SQL_Factura.SELECT_VENTAS_CONTADO_IN_DT);
+        super.pst.setString(1, f1.toString());// se ponen las fechas en el query.
+        super.pst.setString(2, f2.toString());
+        super.rs = super.pst.executeQuery();
+        while(super.rs.next()){
+            r = super.rs.getInt(SQL_Factura.COL_SUMA);
+        }
+        super.CerrarTodo();
+        return r;
+    }
 }
