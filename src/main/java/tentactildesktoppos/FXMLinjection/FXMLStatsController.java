@@ -45,6 +45,13 @@ public class FXMLStatsController extends ControllerFather{
     public Label LB_Pagos;
     
     /**
+     * para poner el ingreso por pagos de contado
+     * dentro del periodo Dt especificado
+     */
+    @FXML
+    public Label LB_Contado;
+    
+    /**
      * para poner el equivalente en capital
      * de la mmercancia en stock.
      */
@@ -128,6 +135,7 @@ public class FXMLStatsController extends ControllerFather{
             try{
                 Hndl_Factura hndfac = new Hndl_Factura();
                 this.LB_Pagos.setText(Integer.toString(hndfac.GetPagoInDt(f1, f2)));
+                this.LB_Contado.setText(Integer.toString(hndfac.GetContadoInDt(f1, f2)));
             } catch(SQLException | ClassNotFoundException ex){
                 super.ShowError(SuppMess.EXCEPTION, SuppMess.CALL_SUPPORT, SuppMess.INFORM_THIS + ex.getMessage());
             }

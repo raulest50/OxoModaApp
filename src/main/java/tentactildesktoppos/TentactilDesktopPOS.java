@@ -55,6 +55,8 @@ public class TentactilDesktopPOS extends Application {
         
         Parent root = (Parent) loader.load();
         
+        root.getStylesheets().add(this.getClass().getResource("MainCSS.css").toExternalForm());
+        
         // se obtiene una instancia del controlador padre fx.
         this.mainDocController = (FXMLDocumentController) loader.getController();
         

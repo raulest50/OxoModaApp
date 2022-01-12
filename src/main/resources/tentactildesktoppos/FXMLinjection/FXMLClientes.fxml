@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -20,7 +26,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1300.0" styleClass="mainFxmlClass" stylesheets="@../MainCSS.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLinjection.FXMLClientesController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1300.0" styleClass="mainFxmlClass" stylesheets="@../MainCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tentactildesktoppos.FXMLinjection.FXMLClientesController">
    <children>
       <Accordion layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <panes>
@@ -242,31 +248,25 @@
                                     </HBox>
                                     <HBox layoutX="10.0" layoutY="10.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#onAction_B_buscar" onMouseClicked="#onClick_B_buscar" prefWidth="120.0" styleClass="botonN" text="Buscar">
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_buscar" prefHeight="38.0" prefWidth="83.0" styleClass="botonN" text="Buscar">
                                              <HBox.margin>
                                                 <Insets right="30.0" />
                                              </HBox.margin>
                                           </Button>
-                                          <Button mnemonicParsing="false" onAction="#onAction_B_Modificar" onMouseClicked="#onClick_B_Modificar" prefWidth="160.0" styleClass="botonD" text="Modificar">
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_Modificar" prefHeight="38.0" prefWidth="105.0" styleClass="botonD" text="Modificar">
                                              <HBox.margin>
                                                 <Insets right="30.0" />
                                              </HBox.margin>
                                           </Button>
-                                          <Button mnemonicParsing="false" onAction="#onAction_B_borrar" onMouseClicked="#onClick_B_borrar" prefWidth="150.0" styleClass="botonN" text="borrar" />
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_borrar" prefHeight="38.0" prefWidth="111.0" styleClass="botonN" text="Borrar" />
+                                          <VBox alignment="CENTER" prefHeight="38.0" prefWidth="30.0" />
+                                          <Button mnemonicParsing="false" onMouseClicked="#onClick_B_Reportar" styleClass="botonD" text="Reportar" />
                                           <ComboBox onAction="#onActionCBFIlter" prefWidth="250.0" HBox.hgrow="ALWAYS">
                                              <HBox.margin>
                                                 <Insets left="25.0" />
                                              </HBox.margin>
                                           </ComboBox>
-                                          <VBox alignment="CENTER">
-                                             <children>
-                                                <FontAwesomeIcon glyphName="FILTER" size="2em">
-                                                   <VBox.margin>
-                                                      <Insets left="10.0" right="10.0" />
-                                                   </VBox.margin>
-                                                </FontAwesomeIcon>
-                                             </children>
-                                          </VBox>
+                                          <FontAwesomeIcon glyphName="FILTER" size="2em" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="15.0" />

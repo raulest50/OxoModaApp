@@ -39,7 +39,8 @@ public class BDHandler {
     private final String direccionGranero="jdbc:mysql://127.0.0.1:3306/negocio_r?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     //jdbc:mysql://localhost/db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     private final String user="root";
-    private final String pass="000012";
+    private final String pass="root";
+    //private final String pass="000012";
     //private final String cfname="com.mysql.jdbc.Driver";
     private final String cfname="com.mysql.cj.jdbc.Driver";
     private final String jlangc = "class java.lang.";
